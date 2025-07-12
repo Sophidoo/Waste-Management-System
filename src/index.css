@@ -1,0 +1,16 @@
+@import "tailwindcss";
+
+@theme {
+  --breakpoint-xs: 350px;
+  --breakpoint-xsm: 450px;
+}
+
+*{
+  box-sizing: border-box;
+}
+
+.HomeHeroSection{
+  background-image: url("./assets/group-volunteers-collecting-garbage.jpg");
+  background-size: cover;
+  background-position: top;
+}
