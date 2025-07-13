@@ -4,8 +4,8 @@ const Home = () => {
 
     return<>
         <div>
-            <div className="HomeHeroSection h-[85vh] w-full relative">
-                <div className="absolute inset-0 bg-black/56 flex flex-col  h-[85vh] w-full px-8 sm:px-15 pb-25 pt-18 xsm:py-25">
+            <div className="HomeHeroSection h-[90vh] w-full relative">
+                <div className="absolute inset-0 bg-gradient-to-r from-black/90  via-black/56 to-black/30 flex flex-col  h-[90vh] w-full px-8 sm:px-15 justify-center">
 
                     <div className="w-full sm:w-[80%] lg:w-[60%] xl:w-[43%] flex flex-col gap-y-7  ">
                         <div className="relative  flex flex-col gap-y-3 pl-4 sm:pl-8">
@@ -18,7 +18,7 @@ const Home = () => {
                         </div>
                         <div className="flex mt-10 sm:mt-15 gap-x-3 cursor-pointer">
                             <button className="py-2 px-8 xsm:px-10 text-xs lg:text-sm font-medium bg-[#ce9417] text-white">Report Waste</button>
-                            <button  className="py-2 px-8 xsm:px-10 text-xs lg:text-sm font-medium bg-transparent border-2 border-white  text-white">Contact Us</button>
+                            <button  className="py-2 px-8 xsm:px-10 text-xs lg:text-sm font-medium bg-transparent border-2 border-white  text-white">About Us</button>
                         </div>
                     </div>
                 </div>
