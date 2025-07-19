@@ -3,6 +3,7 @@
 @theme {
   --breakpoint-xs: 350px;
   --breakpoint-xsm: 450px;
+  --color-primary: #137D17;
 }
 
 *{
