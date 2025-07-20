@@ -138,7 +138,7 @@ const Home = () => {
                         </div>
                         <h3 className="text-lg sm:text-xl font-semibold w-full">Waste Company Onboarding</h3>
                         <p className="text-xs sm:text-[13px] text-gray-600 leading-loose font-medium">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod dolorem id, numquam vero velit perferendis. Ullam in sed omnis, animi magnam debitis? Neque, explicabo suscipit.</p>
-                        <FaArrowRightLong className="text-primary p-2 text-4xl bg-primary-10 rounded-full mt-10"/>
+                        <FaArrowRightLong className="text-primary p-2 text-4xl bg-primary/10 rounded-full mt-10"/>
                     </div>
                     <div className="flex flex-col w-full md:w-1/3 gap-y-2 px-4 xsm:px-6 py-4 rounded items-end bg-primary/10">
                         <div className="w-full">
@@ -151,6 +151,39 @@ const Home = () => {
                 </div>
 
             </div>  
+        </section>
+
+        <section className="countSection h-fit mt-45 md:mt-55">
+
+            <div className="bg-[#184336]/90 px-4 sm:px-20 pb-25 flex flex-col gap-y-10 md:gap-y-20">
+                <div className="flex justify-between items-end gap-x-10 gap-y-10 flex-col-reverse md:flex-row">
+                    <div className="flex flex-col gap-y-10 items-start w-full md:w-1/2 max-md:pt-0 max-lg:pt-10">
+                        <h1 className="text-2xl sm:text-3xl md:text-4xl xl:text-5xl font-semibold text-white">Transforming Waste Management Together</h1>
+                        <button className="text-[11px] sm:text-xs py-2 px-6 bg-amber-500 text-white">Report Waste</button>
+                    </div>
+                    <img src="" alt=""  className="w-full md:w-1/2 h-60 xsm:h-80 lg:h-100 bg-gray-600 -mt-35"/>
+                </div>
+
+                <div className="flex justify-between gap-x-2 gap-y-3 flex-wrap wrap items-center">
+                    <div className="flex flex-col gap-y-1 items-center">
+                        <h1  className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-white">2K</h1>
+                        <p className="text-[11px] sm:text-xs md:text-[13px] text-gray-300 ">Registered Companies</p>
+                    </div>
+                    <div className="flex flex-col gap-y-1 items-center">
+                        <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-white">150</h1>
+                        <p className="text-[11px] sm:text-xs md:text-[13px] text-gray-300 ">Picked Up Waste</p>
+                    </div>
+                    <div className="flex flex-col gap-y-1 items-center">
+                        <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-white">170</h1>
+                        <p className="text-[11px] sm:text-xs md:text-[13px] text-gray-300 ">Reported Waste</p>
+                    </div>
+                    <div className="flex flex-col gap-y-1 items-center">
+                        <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-white">30</h1>
+                        <p className="text-[11px] sm:text-xs md:text-[13px] text-gray-300 ">Satisfied Customers</p>
+                    </div>
+                </div>
+            </div>
+
         </section>
     </>
 

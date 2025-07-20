@@ -15,3 +15,8 @@
   background-size: cover;
   background-position: top;
 }
+
+.countSection{
+  background-image: url("./assets/group-volunteers-collecting-garbage.jpg");
+  background-size: cover;
+}
