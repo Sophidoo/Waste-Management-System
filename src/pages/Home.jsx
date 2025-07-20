@@ -1,4 +1,4 @@
-import { FaArrowRight } from "react-icons/fa"
+
 import waste from "../assets/icons/garbage.png"
 import schedule from "../assets/icons/project.png"
 import pickup from "../assets/icons/recycling-truck.png"
@@ -6,6 +6,7 @@ import reporting from "../assets/icons/checklist.png"
 import onborading from "../assets/icons/onboarding.png"
 import category from "../assets/icons/recycle-bin.png"
 import { FaArrowRightLong } from "react-icons/fa6"
+
 
 const Home = () => {
 
@@ -185,6 +186,8 @@ const Home = () => {
             </div>
 
         </section>
+
+        
     </>
 
 }
