@@ -92,7 +92,7 @@ const ReportWasteModal = ({ onClose, onConfirm }) => {
                 </div>
                 <div className="flex flex-col gap-0.5">
                     <label htmlFor="" className="text-[13px]">Pickup Address</label>
-                    <p className="text-[11px] sm:text-xs text-gray-500 mb-1">Input the pickup addrerss or <small className="text-[11px] sm:text-xs text-blue-500 font-semibold" onClick={handleGeolocationClick}>Click here</small> to use geolocation</p>
+                    <p className="text-[11px] sm:text-xs text-gray-500 mb-1">Input the pickup addrerss or <small className="text-[11px] sm:text-xs text-blue-500 font-semibold cursor-pointer hover:text-blue-700" onClick={handleGeolocationClick}>Click here</small> to use geolocation</p>
                     <input type="text" name="" id="" className="py-2.5 px-3 border border-gray-300 rounded-md text-[13px]" value={pickupAddress}
         onChange={(e) => setPickupAddress(e.target.value)}/>
                 </div>
