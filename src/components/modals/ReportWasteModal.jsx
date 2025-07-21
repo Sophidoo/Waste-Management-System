@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { AiFillStar, AiOutlineStar } from "react-icons/ai";
 import { IoClose } from "react-icons/io5";
 
@@ -6,6 +6,55 @@ import { IoClose } from "react-icons/io5";
 const ReportWasteModal = ({ onClose, onConfirm }) => {
 
     const modalRef = useRef();
+    const [pickupAddress, setPickupAddress] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState(null);
+
+  const handleGeolocationClick = () => {
+    if (!navigator.geolocation) {
+      setError("Geolocation is not supported by your browser");
+      return;
+    }
+
+    setIsLoading(true);
+    setError(null);
+
+    navigator.geolocation.getCurrentPosition(
+      (position) => {
+        // Success callback
+        const { latitude, longitude } = position.coords;
+        
+        // Optionally, you can reverse geocode to get an address
+        fetchAddressFromCoords(latitude, longitude);
+        
+        setIsLoading(false);
+      },
+      (err) => {
+        // Error callback
+        setError("Unable to retrieve your location");
+        setIsLoading(false);
+        console.error(err);
+      }
+    );
+  };
+
+  const fetchAddressFromCoords = async (lat, lng) => {
+    try {
+      // You would typically use a geocoding service here
+      // Example using Nominatim (OpenStreetMap)
+      const response = await fetch(
+        `https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lng}`
+      );
+      const data = await response.json();
+      
+      if (data.display_name) {
+        setPickupAddress(data.display_name);
+      }
+    } catch (err) {
+      console.error("Geocoding error:", err);
+      setPickupAddress(`${lat}, ${lng}`); // Fallback to just showing coordinates
+    }
+  };
     
     useEffect(() => {
         const handleClickOutside = (event) => {
@@ -29,7 +78,7 @@ const ReportWasteModal = ({ onClose, onConfirm }) => {
                 </div>
 
                 <div className="flex flex-col gap-y-1 items-center text-center">
-                    <h3 className="text-sm xsm:text-base font-semibold sm:text-xl text-[#3C366B]">Request Waste Pickup</h3>
+                    <h3 className="text-base font-semibold sm:text-xl text-[#3C366B]">Request Waste Pickup</h3>
                     <p className="text-xs sm:text-[13px] text-gray-600">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempora, quisquam?</p>
                 </div>
 
@@ -43,8 +92,9 @@ const ReportWasteModal = ({ onClose, onConfirm }) => {
                 </div>
                 <div className="flex flex-col gap-0.5">
                     <label htmlFor="" className="text-[13px]">Pickup Address</label>
-                    <p className="text-[11px] sm:text-xs text-gray-500 mb-1">Input the pickup addrerss or <small className="text-[11px] sm:text-xs text-blue-500 font-semibold">Click here</small> to use geolocation</p>
-                    <input type="text" name="" id="" className="py-2.5 px-3 border border-gray-300 rounded-md text-[13px]"/>
+                    <p className="text-[11px] sm:text-xs text-gray-500 mb-1">Input the pickup addrerss or <small className="text-[11px] sm:text-xs text-blue-500 font-semibold" onClick={handleGeolocationClick}>Click here</small> to use geolocation</p>
+                    <input type="text" name="" id="" className="py-2.5 px-3 border border-gray-300 rounded-md text-[13px]" value={pickupAddress}
+        onChange={(e) => setPickupAddress(e.target.value)}/>
                 </div>
                 <div className="flex flex-col gap-0.5">
                     <label htmlFor="" className="text-[13px]">Preferred Time Slot</label>
@@ -54,7 +104,7 @@ const ReportWasteModal = ({ onClose, onConfirm }) => {
                 <div className="flex flex-col gap-0.5">
                     <label htmlFor="" className="text-[13px]">Quantity / Approximate Weight</label>
                     <p className="text-[11px] sm:text-xs text-gray-500 mb-1">Input the quantity or approximate weight of the waste and ensure to add the measurement unit</p>
-                    <input type="time" name="" id="" className="py-2.5 px-3 border border-gray-300 rounded-md text-[13px]"/>
+                    <input type="text" name="" id="" className="py-2.5 px-3 border border-gray-300 rounded-md text-[13px]"/>
                 </div>
                 <div className="flex flex-col gap-0.5">
                     <label htmlFor="" className="text-[13px]">Upload Photos</label>
