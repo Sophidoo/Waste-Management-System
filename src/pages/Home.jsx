@@ -7,10 +7,14 @@ import onborading from "../assets/icons/onboarding.png"
 import category from "../assets/icons/recycle-bin.png"
 import { FaArrowRightLong, FaChevronDown } from "react-icons/fa6"
 import { useState } from "react"
+import { useNavigate } from "react-router-dom"
+import ReportWasteModal from "../components/modals/ReportWasteModal"
 
 
 const Home = () => {
     const [step, setStep] = useState(1)
+  const [showModal, setShowModal] = useState(false)
+  const navigate = useNavigate()
 
 
     const handleStep = (num) => {
@@ -18,6 +22,7 @@ const Home = () => {
     }
 
     return<>
+        {showModal && <ReportWasteModal onClose={() => setShowModal(false)}/>}
         <div>
             <div className="HomeHeroSection h-[85vh] xsm:h-[90vh] w-full relative  max-xsm:-mt-8">
                 <div className="absolute inset-0 bg-gradient-to-r from-black/80  via-black/50 to-black/0 flex flex-col h-[85vh] xsm:h-[90vh] w-full px-8 sm:px-15 justify-center ">
@@ -32,8 +37,8 @@ const Home = () => {
                             <p className="text-gray-200 xsm:text-gray-300 text-[13px] xsm:text-sm lg:text-[15px]">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae impedit sequi cum, eaque, ratione est amet adipisci ad ducimus, quas esse deserunt dolor facere accusamus laboriosam. Consequuntur culpa asperiores assumenda!</p>
                         </div>
                         <div className="flex mt-10 sm:mt-15 gap-x-3 cursor-pointer">
-                            <button className="py-2 px-8 xsm:px-10 text-xs lg:text-sm font-medium bg-[#ce9417] text-white">Report Waste</button>
-                            <button  className="py-2 px-8 xsm:px-10 text-xs lg:text-sm font-medium bg-transparent border-2 border-white  text-white">View Waste</button>
+                            <button className="py-2 px-8 xsm:px-10 text-xs lg:text-sm font-medium bg-[#ce9417] text-white" onClick={() => setShowModal(true)}>Report Waste</button>
+                            <button  className="py-2 px-8 xsm:px-10 text-xs lg:text-sm font-medium bg-transparent border-2 border-white  text-white" onClick={() => navigate("/waste")}>View Waste</button>
                         </div>
                     </div>
                 </div>
@@ -172,7 +177,7 @@ const Home = () => {
                 <div className="flex justify-between items-end gap-x-10 gap-y-10 flex-col-reverse md:flex-row">
                     <div className="flex flex-col gap-y-10 items-start w-full md:w-1/2 max-md:pt-0 max-lg:pt-10">
                         <h1 className="text-2xl sm:text-3xl md:text-4xl xl:text-5xl font-semibold text-white">Transforming Waste Management Together</h1>
-                        <button className="text-[11px] sm:text-xs py-2 px-6 bg-amber-500 text-white">Report Waste</button>
+                        <button className="text-[11px] sm:text-xs py-2 px-6 bg-amber-500 text-white cursor-pointer" onClick={() => setShowModal(true)}>Report Waste</button>
                     </div>
                     <img src="" alt=""  className="w-full md:w-1/2 h-60 xsm:h-80 lg:h-100 bg-gray-600 -mt-35"/>
                 </div>
