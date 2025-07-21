@@ -1,18 +1,20 @@
 import { useState } from 'react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import { NavLink } from 'react-router-dom';
+import ReportWasteModal from './modals/ReportWasteModal';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [showModal, setShowModal] = useState(false)
 
   const navLinks = [
     { name: 'Home', href: '/' },
     { name: 'Waste', href: '/waste' },
-    { name: 'Request Pickup', href: '/request' },
     { name: 'Contact Us', href: '/contact' }
   ];
 
-  return (
+  return <>
+  {showModal && <ReportWasteModal onClose={() => setShowModal(false)}/>}
     <nav className="bg-[#137D17] text-white shadow-sm sticky top-0 z-50">
       <div className=" mx-auto px-4 sm:px-6 lg:px-12">
         <div className="flex justify-between h-16 items-center">
@@ -36,6 +38,7 @@ const Navbar = () => {
                     {link.name}
                 </NavLink>
                 ))}
+                <p className='text-gray-300 cursor-pointer hover:text-white px-3 py-2 text-sm font-medium transition-colors duration-200' onClick={() => setShowModal(true)}>Request Pickup</p>
             </div>
           </div>
 
@@ -82,11 +85,12 @@ const Navbar = () => {
                 {link.name}
               </NavLink>
             ))}
+            <p className='text-gray-300 cursor-pointer hover:text-white px-3 py-2 text-sm font-medium transition-colors duration-200' onClick={() => setShowModal(true)}>Request Pickup</p>
           </div>
         </div>
       )}
     </nav>
-  );
+  </>;
 };
 
 export default Navbar;
