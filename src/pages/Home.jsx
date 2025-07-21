@@ -22,7 +22,7 @@ const Home = () => {
             <div className="HomeHeroSection h-[85vh] xsm:h-[90vh] w-full relative  max-xsm:-mt-8">
                 <div className="absolute inset-0 bg-gradient-to-r from-black/80  via-black/50 to-black/0 flex flex-col h-[85vh] xsm:h-[90vh] w-full px-8 sm:px-15 justify-center ">
 
-                    <div className="w-full sm:w-[80%] lg:w-[60%] xl:w-[43%] flex flex-col gap-y-7  ">
+                    <div className="w-full sm:w-[80%] lg:w-[60%] xsm:-mt-10 xl:w-[43%] flex flex-col gap-y-7  ">
                         <div className="relative  flex flex-col gap-y-3 pl-4 sm:pl-8">
                             <div className="absolute w-10 h-10 sm:w-15 sm:h-15 border-l-2 border-b-2 -bottom-4.5 border-l-white border-b-white border-opacity-100 -left-1"></div>
                             <div className="absolute w-10 h-10 sm:w-15 sm:h-15 border-l-2 border-t-2 -top-2.5 border-l-white border-t-white border-opacity-100 -left-1"></div>
