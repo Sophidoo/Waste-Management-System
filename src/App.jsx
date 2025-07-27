@@ -5,6 +5,8 @@ import Waste from './pages/Waste'
 import CompanyLayout from './layouts/CompanyLayout'
 import AdminLayout from './layouts/AdminLayout'
 import AdminDashboard from './pages/admin/AdminDashboard'
+import AdminUsers from './pages/admin/AdminUsers'
+import AdminSettings from './pages/admin/AdminSettings'
 
 function App() {
 
@@ -17,6 +19,8 @@ function App() {
         </Route>
         <Route path='/admin' element={<AdminLayout />} >
           <Route index element={<AdminDashboard />} />
+          <Route path='users' element={<AdminUsers />} />
+          <Route path='settings' element={<AdminSettings />} />
         </Route>
       </Routes>
     </>

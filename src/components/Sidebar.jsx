@@ -29,7 +29,7 @@ const AdminSidebar = () => {
     return (
         <div className="flex flex-col">
             {/* Top Navigation Bar */}
-            <div className="bg-white flex items-center px-10 py-4 gap-[2%] shadow-[0px_1px_0px_#12203B17] fixed left-0 right-0 top-0 z-40">
+            <div className="bg-white flex items-center px-3 sm:px-10 py-4 gap-[2%] shadow-[0px_1px_0px_#12203B17] fixed left-0 right-0 top-0 z-40">
                 <div className="w-[19.4%]">
                     {windowWidth < 1300 ? (
                         <HiOutlineMenuAlt2 
@@ -43,8 +43,11 @@ const AdminSidebar = () => {
                     )}
                 </div>
 
-                <div className="w-[83%] flex justify-end items-center">
-                    
+                <div className="w-[83%] flex justify-end xsm:justify-between items-center">
+                    <div className="hidden xsm:flex border border-[#E4E4E7] rounded-[10px] p-[10px_16px]  gap-[10px] font-['Plus_Jakarta_Sans'] items-center w-[70%]">
+                        <IoIosSearch className="text-[#A1A1AA] text-[15px]" />
+                        <input type="text" placeholder="Type to search" className="border-0 outline-none bg-transparent text-[12px]" />
+                    </div>
 
                     <div className="flex items-center gap-7">
                         
@@ -128,7 +131,7 @@ const AdminSidebar = () => {
              
             {/* Sidebar */}
             {(windowWidth >= 1300 || showSidebar) && (
-                <div className="fixed top-0 h-screen w-[19.4%] bg-white border-r border-r-gray-200 flex flex-col gap-8 pl-11 pt-4 z-30">
+                <div className="fixed top-0 h-screen w-[70.4%] xl:w-[19.4%] bg-white border-r border-r-gray-200 flex flex-col gap-8 pl-11 pt-4 z-30">
                     {windowWidth < 1300 && (
                         <AiOutlineClose 
                             className="absolute top-5 right-4 cursor-pointer hover:text-red-500" 
@@ -145,6 +148,7 @@ const AdminSidebar = () => {
                     
                     <NavLink
                         to={"/admin"}
+                        end
                         className={({ isActive }) =>
                             `flex items-center gap-3 text-[13px] font-medium ${isActive ? 'text-primary font-semibold' : 'text-gray-500  '}`
                         }
@@ -160,7 +164,7 @@ const AdminSidebar = () => {
                             <NavLink
                                 to={"/admin/appointments"}
                                 className={({ isActive }) =>
-                                    `flex items-center gap-3 text-[13px] font-medium ${isActive ? 'text-primary' : 'text-gray-500  '}`
+                                    `flex items-center gap-3 text-[13px] font-medium ${isActive ? 'text-primary font-semibold' : 'text-gray-500  '}`
                                 }
                             >
                                 <IoTrashBinOutline className="text-lg" />
@@ -169,9 +173,9 @@ const AdminSidebar = () => {
                             
                             
                             <NavLink
-                                to={"/admin/staff"}
+                                to={"/admin/users"}
                                 className={({ isActive }) =>
-                                    `flex items-center gap-3 text-[13px] font-medium ${isActive ? 'text-[#18181B]' : 'text-gray-500'}`
+                                    `flex items-center gap-3 text-[13px] font-medium ${isActive ? 'text-primary font-semibold' : 'text-gray-500  '}`
                                 }
                             >
                                 <HiOutlineUser className="text-lg" />
@@ -181,7 +185,7 @@ const AdminSidebar = () => {
                             <NavLink
                                 to={"/admin/reports"}
                                 className={({ isActive }) =>
-                                    `flex items-center gap-3 text-[13px] font-medium ${isActive ? 'text-[#18181B]' : 'text-gray-500'}`
+                                    `flex items-center gap-3 text-[13px] font-medium ${isActive ? 'text-primary font-semibold' : 'text-gray-500  '}`
                                 }
                             >
                                 <HiOutlineChartSquareBar className="text-lg" />
@@ -191,7 +195,7 @@ const AdminSidebar = () => {
                             <NavLink
                                 to={"/admin/settings"}
                                 className={({ isActive }) =>
-                                    `flex items-center gap-3 text-[13px] font-medium ${isActive ? 'text-[#18181B]' : 'text-gray-500'}`
+                                    `flex items-center gap-3 text-[13px] font-medium ${isActive ? 'text-primary font-semibold' : 'text-gray-500  '}`
                                 }
                             >
                                 <TbSettings className="text-lg" />
@@ -201,7 +205,7 @@ const AdminSidebar = () => {
                             <NavLink
                                 to={"/"}
                                 className={({ isActive }) =>
-                                    `flex items-center gap-3 text-[13px] font-medium ${isActive ? 'text-[#18181B]' : 'text-gray-500'}`
+                                    `flex items-center gap-3 text-[13px] font-medium ${isActive ? 'text-primary font-semibold' : 'text-gray-500  '}`
                                 }
                             >
                                 <HiOutlineLogout className="text-lg" />

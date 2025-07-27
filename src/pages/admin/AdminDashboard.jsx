@@ -272,7 +272,7 @@ const AdminDashboard = () => {
           </div>
           
           <div className="overflow-x-auto">
-            <table className="min-w-150">
+            <table className="min-w-150 w-full">
               <tbody>
                 {/* New Waste Report */}
                 <tr className="border-b border-[#E4E4E7] flex justify-between items-center p-5 pt-0">
