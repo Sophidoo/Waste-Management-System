@@ -1,11 +1,13 @@
 import { useState } from 'react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import ReportWasteModal from './modals/ReportWasteModal';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [showModal, setShowModal] = useState(false)
+
+  const navigate = useNavigate()
 
   const navLinks = [
     { name: 'Home', href: '/' },
@@ -43,7 +45,7 @@ const Navbar = () => {
 
           {/* Desktop Navigation */}
           <div className='hidden md:flex'>
-            <button className='text-xs border-2 border-white px-4 py-1.5 font-medium cursor-pointer hover:bg-white hover:text-[#137D17] transition'>Dashboard</button>
+            <button className='text-xs border-2 border-white px-4 py-1.5 font-medium cursor-pointer hover:bg-white hover:text-[#137D17] transition' onClick={() => navigate("/admin")}>Dashboard</button>
           </div>
           
 
