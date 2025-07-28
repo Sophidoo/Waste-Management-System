@@ -78,7 +78,7 @@ const WasteTable = () => {
             <tr>
                 <th 
                     scope="col" 
-                    className="px-6 py-3 text-left text-[11px] font-medium text-gray-500 uppercase tracking-wider cursor-pointer"
+                    className="px-6 py-3 text-left text-[10px] sm:text-[11px] font-medium text-gray-500 uppercase tracking-wider cursor-pointer"
                     onClick={() => requestSort('wasteType')}
                 >
                     <div className="flex items-center">
@@ -92,7 +92,7 @@ const WasteTable = () => {
                 </th>
               <th 
                 scope="col" 
-                className="px-6 py-3 text-left text-[11px] font-medium text-gray-500 uppercase tracking-wider cursor-pointer"
+                className="px-6 py-3 text-left text-[10px] sm:text-[11px] font-medium text-gray-500 uppercase tracking-wider cursor-pointer"
                 onClick={() => requestSort('address')}
               >
                 <div className="flex items-center">
@@ -106,16 +106,36 @@ const WasteTable = () => {
               </th>
               
               <th 
-                className="px-6 py-3 text-left text-[11px] font-medium text-gray-500 uppercase tracking-wider cursor-pointer">
-                Reported By
+                className="px-6 py-3 text-left text-[10px] sm:text-[11px] font-medium text-gray-500 uppercase tracking-wider cursor-pointer"
+                scope="col" 
+                onClick={() => requestSort('reportedDate')}
+            >
+                <div className="flex items-center">
+                    Reported By
+                {sortConfig.key === 'reportedDate' && (
+                    sortConfig.direction === 'asc' ? 
+                    <FiChevronUp className="ml-1" /> : 
+                    <FiChevronDown className="ml-1" />
+                  )}
+                </div>
               </th>
               <th 
-                className="px-6 py-3 text-left text-[11px] font-medium text-gray-500 uppercase tracking-wider cursor-pointer">
-                Assigned To
+                className="px-6 py-3 text-left text-[10px] sm:text-[11px] font-medium text-gray-500 uppercase tracking-wider cursor-pointer"
+                scope="col" 
+                onClick={() => requestSort('pickupTime')}
+            >
+                <div className="flex items-center">
+                    Assigned To
+                {sortConfig.key === 'pickupTime' && (
+                    sortConfig.direction === 'asc' ? 
+                    <FiChevronUp className="ml-1" /> : 
+                    <FiChevronDown className="ml-1" />
+                  )}
+                </div>
               </th>
               <th 
                 scope="col" 
-                className="px-6 py-3 text-left text-[11px] font-medium text-gray-500 uppercase tracking-wider cursor-pointer"
+                className="px-6 py-3 text-left text-[10px] sm:text-[11px] font-medium text-gray-500 uppercase tracking-wider cursor-pointer"
                 onClick={() => requestSort('status')}
               >
                 <div className="flex items-center">
@@ -127,7 +147,7 @@ const WasteTable = () => {
                   )}
                 </div>
               </th>
-              <th scope="col" className="px-6 py-3 text-left text-[11px] font-medium text-gray-500 uppercase tracking-wider">
+              <th scope="col" className="px-6 py-3 text-left text-[10px] sm:text-[11px] font-medium text-gray-500 uppercase tracking-wider">
                 Actions
               </th>
             </tr>
@@ -139,7 +159,7 @@ const WasteTable = () => {
                   <td className="px-6 py-4 whitespace-nowrap text-xs sm:text-[13px] text-gray-500">
                     {item.wasteType}
                   </td>
-                  <td className="px-6 py-4 whitespace-nowrap text-xs sm:text-[13px] text-gray-500 mzx-w-100">
+                  <td className="px-6 py-4  text-xs sm:text-[13px] text-gray-500 max-w-100">
                     <div>
                         <div className="flex items-center">
                             <FiMapPin className="mr-1 text-gray-400" />
@@ -161,7 +181,7 @@ const WasteTable = () => {
                     </div>
                   </td>
                   <td className="px-6 py-4 whitespace-nowrap">
-                    <span className={`px-2 py-1 inline-flex text-[11px] leading-5 font-semibold rounded-full ${
+                    <span className={`px-2 py-0.5 inline-flex text-[10px] font-medium rounded-full ${
                       item.status === 'Pending' ? 'bg-yellow-100 text-yellow-800' :
                       item.status === 'Approved' ? 'bg-blue-100 text-blue-800' :
                       item.status === 'Completed' ? 'bg-green-100 text-green-800' :
