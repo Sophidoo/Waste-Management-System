@@ -36,35 +36,41 @@ const AdminSettings = () => {
     return (
         <div className="">
             {/* Settings Heading */}
-            <div className="mb-6">
-                <h2 className="text-lg md:text-xl font-semibold">Account Settings</h2>
-            </div>
+            <div className="mb-6 flex justify-between gap-y-6 items-center">
+                <div className=" flex flex-col gap-1">
+                    <h2 className="text-base sm:text-lg font-medium flex items-center gap-2">
+                        Account Settings
+                    </h2>
+                    <p className="text-gray-500 text-xs sm:text-[13px]">Change the saved details of your account</p>
+                </div>
 
-            {/* Tabs */}
-            <div className="mb-6 w-fit">
-                <div className="flex bg-gray-100 rounded-lg p-1 cursor-pointer">
-                    <button 
-                        className={`px-4 py-2 rounded-md text-xs sm:text-[13px] font-medium cursor-pointer ${profile ? 'bg-white shadow' : 'hover:bg-white'}`}
-                        onClick={() => {
-                            setProfile(true);
-                            setBusiness(false);
-                            setPassword(false);
-                        }}
-                    >
-                        Profile
-                    </button>
-                    <button 
-                        className={`px-4 py-2 rounded-md text-xs sm:text-[13px] cursor-pointer font-medium ${password ? 'bg-white shadow' : 'hover:bg-white'}`}
-                        onClick={() => {
-                            setProfile(false);
-                            setBusiness(false);
-                            setPassword(true);
-                        }}
-                    >
-                        Password
-                    </button>
+                {/* Tabs */}
+                <div className="mb-6 w-fit">
+                    <div className="flex bg-gray-100 rounded-lg p-1 cursor-pointer">
+                        <button 
+                            className={`px-4 py-2 rounded-md text-xs sm:text-[13px] font-medium cursor-pointer ${profile ? 'bg-white shadow' : 'hover:bg-white'}`}
+                            onClick={() => {
+                                setProfile(true);
+                                setBusiness(false);
+                                setPassword(false);
+                            }}
+                        >
+                            Profile
+                        </button>
+                        <button 
+                            className={`px-4 py-2 rounded-md text-xs sm:text-[13px] cursor-pointer font-medium ${password ? 'bg-white shadow' : 'hover:bg-white'}`}
+                            onClick={() => {
+                                setProfile(false);
+                                setBusiness(false);
+                                setPassword(true);
+                            }}
+                        >
+                            Password
+                        </button>
+                    </div>
                 </div>
             </div>
+
 
             {/* Form Wrapper */}
             <div className=" rounded-b-lg rounded-tr-lg ">

@@ -7,6 +7,7 @@ import AdminLayout from './layouts/AdminLayout'
 import AdminDashboard from './pages/admin/AdminDashboard'
 import AdminUsers from './pages/admin/AdminUsers'
 import AdminSettings from './pages/admin/AdminSettings'
+import AdminWaste from './pages/admin/AdminWaste'
 
 function App() {
 
@@ -21,6 +22,7 @@ function App() {
           <Route index element={<AdminDashboard />} />
           <Route path='users' element={<AdminUsers />} />
           <Route path='settings' element={<AdminSettings />} />
+          <Route path='waste' element={<AdminWaste />} />
         </Route>
       </Routes>
     </>

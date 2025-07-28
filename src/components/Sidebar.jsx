@@ -162,7 +162,7 @@ const AdminSidebar = () => {
                             <small className="text-[#A1A1AA] text-xs tracking-wider">ADMINISTRATION</small>
                             
                             <NavLink
-                                to={"/admin/appointments"}
+                                to={"/admin/waste"}
                                 className={({ isActive }) =>
                                     `flex items-center gap-3 text-[13px] font-medium ${isActive ? 'text-primary font-semibold' : 'text-gray-500  '}`
                                 }
