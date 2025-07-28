@@ -22,3 +22,12 @@
   background-image: url("./assets/group-volunteers-collecting-garbage.jpg");
   background-size: cover;
 }
+
+.wasteTable::-webkit-scrollbar{
+  height: 2px;
+  background-color: rgb(235, 235, 235);
+}
+.wasteTable::-webkit-scrollbar-thumb{
+  height: 2px;
+  background-color: rgb(183, 183, 183);
+}

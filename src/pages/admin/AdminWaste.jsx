@@ -27,7 +27,7 @@ const AdminWaste = () => {
 
 
     {/* SUMMARY CARDS */}
-    <div className="flex justify-between gap-[2.5%] gap-y-3 flex-wrap">
+    <div className="flex justify-between gap-[2.5%] gap-y-3 flex-wrap mb-10">
         <div className="bg-white border border-[#E4E4E7] rounded-xl p-4 flex flex-col items-start gap-3 w-full xsm:w-[23.125%] min-w-[200px]">
           <small className="text-[#71717A] text-xs font-medium tracking-wider">Total Reports</small>
           <div>
