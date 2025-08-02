@@ -10,7 +10,7 @@ const Footer = () => {
             <div className="px-4 sm:px-20 pt-20 flex flex-col items-center gap-y-10 bg-[#184336]/90">
                 <div className="flex flex-col gap-y-3 text-center items-center text-white">
                     <h1 className="font-bold text-2xl sm:text-3xl lg:text-5xl">Waste</h1>
-                    <p className="fontemedium text-xs sm:text-[13px] w-full md:w-[80%]">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Mollitia iure quod minima! Est quibusdam rerum facilis quo sint deleniti eius neque, minima adipisci laborum laboriosam aliquam expedita! Illum, provident nobis!</p>
+                    <p className="fontemedium text-xs sm:text-[13px] w-full md:w-[80%]">Waste affects everyone—but together, we can make a difference. Join our mission to promote responsible waste reporting, efficient pickups, and a cleaner environment for all.</p>
                 </div>
                 <hr className="border border-gray-400 w-full"/>
                 <div className="text-white text-[13px] sm:text-sm font-medium flex gap-x-12 flex-wrap items-center gap-y-3 justify-center">

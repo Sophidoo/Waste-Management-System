@@ -35,7 +35,7 @@ const Home = () => {
                             <h1 className="leading-tight text-xl xs:text-2xl xsm:text-4xl  font-bold  text-white w-full">
                                 Sustainable Solutions  for a Cleaner Tomorrow
                             </h1>
-                            <p className="text-gray-200 xsm:text-gray-300 text-[13px] xsm:text-sm lg:text-[15px]">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae impedit sequi cum, eaque, ratione est amet adipisci ad ducimus, quas esse deserunt dolor facere accusamus laboriosam. Consequuntur culpa asperiores assumenda!</p>
+                            <p className="text-gray-200 xsm:text-gray-300 text-[13px] xsm:text-sm lg:text-[15px]">Join us in building a cleaner, greener future. Our platform makes it easy to report, manage, and reduce waste in your community—one pickup at a time.</p>
                         </div>
                         <div className="flex mt-10 sm:mt-15 gap-x-3 cursor-pointer">
                             <button className="py-2 px-8 xsm:px-10 text-xs lg:text-sm font-medium bg-[#ce9417] text-white" onClick={() => setShowModal(true)}>Report Waste</button>
@@ -51,21 +51,21 @@ const Home = () => {
                         <img src={waste} alt="" className="h-10 sm:h-15 w-auto"/>
                         <div className="flex flex-col gap-y-1">
                             <div className="font-semibold text-sm ">Report Waste</div>
-                            <p className="font-medium text-gray-600 text-[11px] ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe harum esse cumque aliquam.</p>
+                            <p className="font-medium text-gray-600 text-[11px] ">Easily report waste dumps in your area and get prompt action from registered waste companies.</p>
                         </div>
                     </div>
                     <div className="flex gap-x-4 items-center p-4">
                         <img src={schedule} alt="" className="h-10 sm:h-15 w-auto"/>
                         <div className="flex flex-col gap-y-1">
                             <div className="font-semibold text-sm ">Schedule Pickup</div>
-                            <p className="font-medium text-gray-600 text-[11px] ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe harum esse cumque aliquam.</p>
+                            <p className="font-medium text-gray-600 text-[11px] ">Arrange convenient pickup times for your household or business waste with just a few clicks.</p>
                         </div>
                     </div>
                     <div className="flex gap-x-4 items-center p-4">
                         <img src={pickup} alt="" className="h-10 sm:h-15 w-auto"/>
                         <div className="flex flex-col gap-y-1">
                             <div className="font-semibold text-sm ">Pick Up Waste</div>
-                            <p className="font-medium text-gray-600 text-[11px] ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe harum esse cumque aliquam.</p>
+                            <p className="font-medium text-gray-600 text-[11px] ">Registered companies can view and respond to waste pickup requests in real-time.</p>
                         </div>
                     </div>
                 </div>
@@ -74,13 +74,13 @@ const Home = () => {
 
         {/* ABOUT US */}
         <section className="px-6 sm:px-20 flex flex-col gap-y-7 py-25">
-            <h2 className="text-lg md:text-xl  w-full sm:w-[600px] font-bold">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa velit explicabo et quos dolorum sapiente?</h2>
+            <h2 className="text-lg md:text-xl  w-full sm:w-[600px] font-bold">Our mission is to simplify waste management and promote sustainable living for everyone.</h2>
 
             <div className="flex flex-col lg:flex-row gap-x-10 sm:gap-x-20 items-center gap-y-4">
                 <img src="" alt="" className="w-full lg:w-1/2 h-60 xsm:h-70 sm:h-90 bg-gray-300"/>
 
                 <div className="flex flex-col gap-y-5 w-full lg:w-1/2 ">
-                    <p className="text-[13px] leading-loose font-medium text-gray-600">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit, pariatur nam quod repellendus porro architecto! Nam commodi fugit, a nesciunt optio tenetur veniam at adipisci! Esse, porro quo? Itaque molestiae provident aut omnis repudiandae ipsa obcaecati, modi dicta esse quas beatae voluptas ab autem id ipsum suscipit rerum iste. Quam!</p>
+                    <p className="text-[13px] leading-loose font-medium text-gray-600">We believe that everyone has a role to play in keeping our environment clean. Our platform empowers individuals, communities, and companies to take control of their waste by making the process transparent, traceable, and efficient.</p>
 
                     <div className="flex flex-col gap-y-2">
                         <div className="text-[13px] sm:text-sm font-medium flex justify-between items-center">
@@ -104,10 +104,10 @@ const Home = () => {
                     </div>
 
                     <ul className="ml-4 list-disc text-[13px]  text-gray-600 font-medium leading-loose">
-                        <li> Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati.</li>
-                        <li>Lorem ipsum dolor sit.</li>
-                        <li>Lorem ipsum dolor sit amet consectetur adipisicing.</li>
-                        <li>Lorem ipsum dolor sit amet consectetur.</li>
+                        <li> Ensures accountability in waste reporting and pickup.</li>
+                        <li>Connects residents with verified waste management companies.</li>
+                        <li>Tracks progress and impact in real-time.</li>
+                        <li>Encourages community participation in sustainability.</li>
                     </ul>
                 </div>
             </div>
@@ -121,14 +121,14 @@ const Home = () => {
                 <div className="flex flex-col md:flex-row justify-end">
                     <div className="flex flex-col gap-y-2  md:w-1/3  pr-6 max-md:pb-10">
                         <h1 className="text-xl xsm:text-2xl lg:text-4xl font-semibold">Waste Services</h1>
-                        <p className="text-gray-600 text-[11px] sm:text-[13px] leading-loose">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad dignissimos iusto nisi fuga iste quidem, consectetur explicabo unde blanditiis at?</p>
+                        <p className="text-gray-600 text-[11px] sm:text-[13px] leading-loose">Our platform provides efficient, eco-friendly waste management services tailored to meet residential, commercial, and industrial needs. Whether it's pickup, scheduling, or categorization—we simplify the entire process for a cleaner environment.</p>
                     </div>
                     <div className="flex flex-col w-full md:w-1/3 gap-y-2 px-4 xsm:px-6 py-4 rounded items-end bg-primary/10">
                         <div className="w-full">
                             <img src={reporting} alt="" className="h-10 sm:h-13 w-auto mb-4"/>
                         </div>
                         <h3 className="text-lg sm:text-xl font-semibold w-full">Waste Reporting</h3>
-                        <p className="text-xs  text-gray-600 leading-loose font-medium">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod dolorem id, numquam vero velit perferendis. Ullam in sed omnis, animi magnam debitis? Neque, explicabo suscipit.</p>
+                        <p className="text-xs  text-gray-600 leading-loose font-medium">Users can quickly report waste in their area, helping to create a cleaner environment through transparency and collaboration.</p>
                         <FaArrowRightLong className="text-primary p-2 text-4xl bg-white rounded-full mt-10"/>
                     </div>
                     <div className="flex flex-col w-full md:w-1/3 gap-y-2 px-4 xsm:px-6 py-4 rounded items-end bg-white">
@@ -136,7 +136,7 @@ const Home = () => {
                             <img src={schedule} alt="" className="h-10 sm:h-13 w-auto mb-4"/>
                         </div>
                         <h3 className="text-lg sm:text-xl font-semibold w-full">Waste Scheduling</h3>
-                        <p className="text-xs  text-gray-600 leading-loose font-medium">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod dolorem id, numquam vero velit perferendis. Ullam in sed omnis, animi magnam debitis? Neque, explicabo suscipit.</p>
+                        <p className="text-xs  text-gray-600 leading-loose font-medium">Schedule waste pickups at your convenience. Our system ensures your requests are fulfilled on time by verified companies.</p>
                         <FaArrowRightLong className="text-primary p-2 text-4xl bg-primary/10 rounded-full mt-8"/>
                     </div>
                 </div>
@@ -146,7 +146,7 @@ const Home = () => {
                             <img src={pickup} alt="" className="h-10 sm:h-13 w-auto mb-4"/>
                         </div>
                         <h3 className="text-lg sm:text-xl font-semibold w-full">Waste Collection</h3>
-                        <p className="text-xs  text-gray-600 leading-loose font-medium">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod dolorem id, numquam vero velit perferendis. Ullam in sed omnis, animi magnam debitis? Neque, explicabo suscipit.</p>
+                        <p className="text-xs  text-gray-600 leading-loose font-medium">Companies get notified of new pickup requests, view them by proximity, and respond with efficiency and professionalism.</p>
                         <FaArrowRightLong className="text-primary p-2 text-4xl bg-white rounded-full mt-10"/>
                     </div>
                     <div className="flex flex-col w-full md:w-1/3 gap-y-2 px-4 xsm:px-6 py-4 rounded items-end bg-white">
@@ -154,7 +154,7 @@ const Home = () => {
                             <img src={onborading} alt="" className="h-10 sm:h-13 w-auto mb-4"/>
                         </div>
                         <h3 className="text-lg sm:text-xl font-semibold w-full">Waste Company Onboarding</h3>
-                        <p className="text-xs  text-gray-600 leading-loose font-medium">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod dolorem id, numquam vero velit perferendis. Ullam in sed omnis, animi magnam debitis? Neque, explicabo suscipit.</p>
+                        <p className="text-xs  text-gray-600 leading-loose font-medium">Waste companies can register to join our platform, manage requests, and contribute to community sanitation efforts.</p>
                         <FaArrowRightLong className="text-primary p-2 text-4xl bg-primary/10 rounded-full mt-10"/>
                     </div>
                     <div className="flex flex-col w-full md:w-1/3 gap-y-2 px-4 xsm:px-6 py-4 rounded items-end bg-primary/10">
@@ -162,7 +162,7 @@ const Home = () => {
                             <img src={category} alt="" className="h-10 sm:h-13 w-auto mb-4"/>
                         </div>
                         <h3 className="text-lg sm:text-xl font-semibold w-full">Waste Category</h3>
-                        <p className="text-xs  text-gray-600 leading-loose font-medium">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod dolorem id, numquam vero velit perferendis. Ullam in sed omnis, animi magnam debitis? Neque, explicabo suscipit.</p>
+                        <p className="text-xs  text-gray-600 leading-loose font-medium">View and understand different waste types—from recyclables to hazardous—so they’re handled appropriately.</p>
                         <FaArrowRightLong className="text-primary p-2 text-4xl bg-white rounded-full mt-10"/>
                     </div>
                 </div>
@@ -211,7 +211,7 @@ const Home = () => {
             <div className="w-full lg:w-1/2 flex flex-col gap-y-3 ">
                 <div className="flex flex-col gap-y-1">
                     <h1 className="text-2xl m:text-3xl lg:text-4xl font-semibold">How it Works</h1>
-                    <p className="text-xs sm:text-sm text-gray-600 leading-loose">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rerum vero sunt quos. Nemo ducimus tempore ut quas soluta perspiciatis fugiat?</p>
+                    <p className="text-xs sm:text-sm text-gray-600 leading-loose">Our process is simple and designed for impact. Whether you're a resident or a service provider, our step-by-step system makes waste management effortless and effective.</p>
                 </div>
 
                 <div className="w-full mt-4 flex flex-col gap-y-5">
