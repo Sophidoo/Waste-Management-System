@@ -8,6 +8,8 @@ import AdminDashboard from './pages/admin/AdminDashboard'
 import AdminUsers from './pages/admin/AdminUsers'
 import AdminSettings from './pages/admin/AdminSettings'
 import AdminWaste from './pages/admin/AdminWaste'
+import MapView from './pages/admin/MapView'
+import AdminNotifications from './pages/admin/AdminNotifications'
 
 function App() {
 
@@ -23,6 +25,8 @@ function App() {
           <Route path='users' element={<AdminUsers />} />
           <Route path='settings' element={<AdminSettings />} />
           <Route path='waste' element={<AdminWaste />} />
+          <Route path='notifications' element={<AdminNotifications />} />
+          <Route path='map' element={<MapView />} />
         </Route>
       </Routes>
     </>

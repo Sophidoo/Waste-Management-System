@@ -183,7 +183,7 @@ const AdminSidebar = () => {
                             </NavLink>
                             
                             <NavLink
-                                to={"/admin/reports"}
+                                to={"/admin/notifications"}
                                 className={({ isActive }) =>
                                     `flex items-center gap-3 text-[13px] font-medium ${isActive ? 'text-primary font-semibold' : 'text-gray-500  '}`
                                 }
