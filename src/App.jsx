@@ -34,6 +34,7 @@ function App() {
           <Route index element={<CompanyDashboard />} />
           <Route path='waste' element={<CompanyWaste />} />
           <Route path='notifications' element={<AdminNotifications />} />
+          <Route path='settings' element={<AdminSettings />} />
         </Route>
       </Routes>
     </>
