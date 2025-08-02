@@ -8,7 +8,7 @@ const Waste = () => {
     return <>
         <section className="flex flex-col gap-y-3 items-center pb-12 pt-20 sm:pt-25 px-4 sm:px-20 text-center">
             <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold">Reported Waste</h1>
-            <p className="text-xs sm:text-[13px] font-medium text-gray-600 w-full md:w-180 lg:w-200">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veritatis cum, impedit quos minima tenetur quis voluptatem itaque quibusdam esse est explicabo officiis ab nobis odit veniam. Eligendi vitae harum libero?</p>
+            <p className="text-xs sm:text-[13px] font-medium text-gray-600 w-full md:w-180 lg:w-200">View all waste reports submitted by users across different areas. Track the status of each report from pending to pickup, and stay informed as we work together toward cleaner communities.</p>
         </section>
         {/* <hr className="mx-4 sm:mx-20 border border-gray-300"/> */}
         <div className="flex flex-col xs:flex-row justify-between  sm:mx-20 bg-white mb-15 border border-gray-200">
