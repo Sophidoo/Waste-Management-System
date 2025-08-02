@@ -65,7 +65,6 @@ const AdminNotifications = () => {
                             <FaChevronDown className="text-gray-500 w-[13px]"/>
                         </div>
                         <p className="text-gray-500 text-[11px] sm:text-xs font-[400]">General cleaning task has been cancelled for today due to the ongoing maintenance.</p>
-                        <NavLink className="text-[#79DA11] text-[13px] font-[500] mt-[14px]">View Details</NavLink>
                     </div>
 
                     <p className="text-[13px] mt-2 sm:text-[13px] sm:text-sm">Earlier</p>

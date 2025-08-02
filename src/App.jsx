@@ -10,6 +10,8 @@ import AdminSettings from './pages/admin/AdminSettings'
 import AdminWaste from './pages/admin/AdminWaste'
 import MapView from './pages/admin/MapView'
 import AdminNotifications from './pages/admin/AdminNotifications'
+import CompanyDashboard from './pages/company/CompanyDashboard'
+import CompanyWaste from './pages/company/CompanyWaste'
 
 function App() {
 
@@ -27,6 +29,11 @@ function App() {
           <Route path='waste' element={<AdminWaste />} />
           <Route path='notifications' element={<AdminNotifications />} />
           <Route path='map' element={<MapView />} />
+        </Route>
+        <Route path='/company' element={<CompanyLayout />} >
+          <Route index element={<CompanyDashboard />} />
+          <Route path='waste' element={<CompanyWaste />} />
+          <Route path='notifications' element={<AdminNotifications />} />
         </Route>
       </Routes>
     </>
