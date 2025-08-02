@@ -120,7 +120,7 @@ const Home = () => {
                 <div className="flex flex-col md:flex-row justify-end">
                     <div className="flex flex-col gap-y-2  md:w-1/3  pr-6 max-md:pb-10">
                         <h1 className="text-xl xsm:text-2xl lg:text-4xl font-semibold">Waste Services</h1>
-                        <p className="text-gray-600 text-[11px] sm:text-[13px] leading-loose"Our platform provides efficient, eco-friendly waste management services tailored to meet residential, commercial, and industrial needs. Whether it's pickup, scheduling, or categorization—we simplify the entire process for a cleaner environment.</p>
+                        <p className="text-gray-600 text-[11px] sm:text-[13px] leading-loose">Our platform provides efficient, eco-friendly waste management services tailored to meet residential, commercial, and industrial needs. Whether it's pickup, scheduling, or categorization—we simplify the entire process for a cleaner environment.</p>
                     </div>
                     <div className="flex flex-col w-full md:w-1/3 gap-y-2 px-4 xsm:px-6 py-4 rounded items-end bg-primary/10">
                         <div className="w-full">
