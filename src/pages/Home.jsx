@@ -4,6 +4,7 @@ import schedule from "../assets/icons/project.png"
 import pickup from "../assets/icons/recycling-truck.png"
 import reporting from "../assets/icons/checklist.png"
 import onborading from "../assets/icons/onboarding.png"
+import cartoon from "../assets/cartoon.jpg"
 import category from "../assets/icons/recycle-bin.png"
 import { FaArrowRightLong, FaChevronDown } from "react-icons/fa6"
 import { useState } from "react"
@@ -179,7 +180,7 @@ const Home = () => {
                         <h1 className="text-2xl sm:text-3xl md:text-4xl xl:text-5xl font-semibold text-white">Transforming Waste Management Together</h1>
                         <button className="text-[11px] sm:text-xs py-2 px-6 bg-amber-500 text-white cursor-pointer" onClick={() => setShowModal(true)}>Report Waste</button>
                     </div>
-                    <img src="" alt=""  className="w-full md:w-1/2 h-60 xsm:h-80 lg:h-100 bg-gray-600 -mt-35"/>
+                    <img src={cartoon} alt=""  className="w-full md:w-1/2 h-60 xsm:h-80 lg:h-100 bg-gray-600 -mt-35"/>
                 </div>
 
                 <div className="flex justify-between gap-x-2 gap-y-3 flex-wrap wrap items-center">

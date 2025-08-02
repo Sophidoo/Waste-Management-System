@@ -11,7 +11,7 @@ const Waste = () => {
             <p className="text-xs sm:text-[13px] font-medium text-gray-600 w-full md:w-180 lg:w-200">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veritatis cum, impedit quos minima tenetur quis voluptatem itaque quibusdam esse est explicabo officiis ab nobis odit veniam. Eligendi vitae harum libero?</p>
         </section>
         {/* <hr className="mx-4 sm:mx-20 border border-gray-300"/> */}
-        <div className="flex flex-col xs:flex-row justify-between  sm:mx-20 bg-white mb-15 border border-gray-200">
+        {/* <div className="flex flex-col xs:flex-row justify-between  sm:mx-20 bg-white mb-15 border border-gray-200">
             <div className="bg-white hover:shadow-md  text-gray-700  cursor-pointer py-3 px-4 sm:px-6 w-full xs:w-1/3 flex justify-between border-b-3 border-b-primary border-r-1 border-r-gray-200">
                 <p className="text-xs sm:text-sm font-medium">Pending</p>
                 <img src={pending} alt="" className="h-5 w-auto "/>
@@ -24,7 +24,7 @@ const Waste = () => {
                 <p className="text-xs sm:text-sm font-medium ">Picked Up</p>
                 <img src={pickedUp} alt="" className="h-5 w-auto "/>
             </div>
-        </div>
+        </div> */}
 
 
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 mt-10  px-4 sm:px-20 mb-20">
