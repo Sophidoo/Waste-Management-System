@@ -12,15 +12,22 @@ import MapView from './pages/admin/MapView'
 import AdminNotifications from './pages/admin/AdminNotifications'
 import CompanyDashboard from './pages/company/CompanyDashboard'
 import CompanyWaste from './pages/company/CompanyWaste'
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css';
+import Register from './pages/Auth/Register'
+import Login from './pages/Auth/Login'
 
 function App() {
 
   return (
     <>
+    <ToastContainer position="top-right" autoClose={3000} theme="colored" />
       <Routes>
         <Route path="/" element={<IndexLayout/>} >
           <Route index element={<Home />} />
           <Route path='waste' element={<Waste />} />
+          <Route path='register' element={<Register />} />
+          <Route path='login' element={<Login />} />
         </Route>
         <Route path='/admin' element={<AdminLayout />} >
           <Route index element={<AdminDashboard />} />
