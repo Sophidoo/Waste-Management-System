@@ -2,7 +2,8 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
-const BASE_URL = 'https://waste-management-backend-fwir.onrender.com/api/v1'; // Replace with your actual backend URL
+// const BASE_URL = 'http://localhost:3400/api/v1'; // Replace with your actual backend URL
+const BASE_URL = 'https://waste-management-backend-fwir.onrender.com/api/v1'
 
 export const api = axios.create({
   baseURL: BASE_URL,
