@@ -5,6 +5,7 @@ import pickup from "../assets/icons/recycling-truck.png"
 import reporting from "../assets/icons/checklist.png"
 import onborading from "../assets/icons/onboarding.png"
 import cartoon from "../assets/cartoon.jpg"
+import about from "../assets/people-office-work-day.jpg"
 import category from "../assets/icons/recycle-bin.png"
 import { FaArrowRightLong, FaChevronDown } from "react-icons/fa6"
 import { useState } from "react"
@@ -77,7 +78,7 @@ const Home = () => {
             <h2 className="text-lg md:text-xl  w-full sm:w-[600px] font-bold">Our mission is to simplify waste management and promote sustainable living for everyone.</h2>
 
             <div className="flex flex-col lg:flex-row gap-x-10 sm:gap-x-20 items-center gap-y-4">
-                <img src="" alt="" className="w-full lg:w-1/2 h-60 xsm:h-70 sm:h-90 bg-gray-300"/>
+                <img src={about} alt="" className="w-full lg:w-1/2 h-60 xsm:h-70 sm:h-90 bg-gray-300 object-cover"/>
 
                 <div className="flex flex-col gap-y-5 w-full lg:w-1/2 ">
                     <p className="text-[13px] leading-loose font-medium text-gray-600">We believe that everyone has a role to play in keeping our environment clean. Our platform empowers individuals, communities, and companies to take control of their waste by making the process transparent, traceable, and efficient.</p>
