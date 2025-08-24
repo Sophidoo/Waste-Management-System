@@ -4,7 +4,7 @@ import approved from "../assets/icons/quality.png"
 import pickedUp from "../assets/icons/recycling-truck (1).png"
 import { toast, ToastContainer } from "react-toastify";
 import { useEffect, useState } from "react";
-import { getReports } from "../services/api";
+import { getReports, getTodayReports } from "../services/api";
 
 const Waste = () => {
     
@@ -17,7 +17,7 @@ const Waste = () => {
     const fetchReports = async () => {
       setLoading(true);
       try {
-        const response = await getReports(page, 10);
+        const response = await getTodayReports();
         console.log(response)
         setReports(response.data.reports || []);
         setTotalPages(response.data.totalPages || 1);
@@ -51,11 +51,7 @@ const Waste = () => {
   const formatDateTime = (dateString) => {
     if (!dateString) return "N/A";
     const date = new Date(dateString);
-    return date.toLocaleString("en-US", {
-      hour: "numeric",
-      minute: "numeric",
-      hour12: true,
-    });
+    return date.toLocaleString();
   };
 
   const generateMapUrl = (latitude, longitude) => {
@@ -82,22 +78,26 @@ const Waste = () => {
               } border-gray-200 p-4`}
             >
               <div className="flex flex-col gap-y-4 xsm:flex-row gap-x-3 items-center">
-                <iframe
+                {
+                  report.mapLocation.latitude !== 'NaN' && report.mapLocation.longitude !== 'NaN' ?
+                  <iframe
                   src={generateMapUrl(report.mapLocation.latitude, report.mapLocation.longitude)}
                   className="w-full xsm:w-23 h-21 sm:w-27 sm:h-25 rounded-md shadow-sm"
                   allowFullScreen=""
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
                 ></iframe>
+                : ""
+                }
                 <div className="flex flex-col gap-y-1 w-full">
-                  <div className="flex w-full text-gray-600 justify-between items-center text-[11px] font-medium sm:text-xs">
-                    <p>{report.type.toUpperCase()}</p>
+                  <div className="flex flex-wrap w-full text-gray-600 justify-between items-center text-[11px] font-medium sm:text-xs">
+                    <p>{report.type.toUpperCase()} </p>
                     <div className="flex items-center gap-x-2">
                       <img src={getStatusIcon(report.status)} alt={report.status} className="w-4 h-4" />
                       <p>{report.quantity ? `${report.quantity}mg` : "N/A"}</p>
                     </div>
                   </div>
-                  <h3 className="text-xs sm:text-sm font-bold">{report.location}</h3>
+                  <h3 className="text-xs sm:text-sm font-bold">{report.location ? report.location : `Lat: ${report.mapLocation.latitude}, Lon: ${report.mapLocation.longitude}`}</h3>
                   <div className="flex flex-wrap gap-x-2 text-[11px] sm:text-xs">
                     <p className="text-gray-600">Preferred Pickup Time:</p>
                     <p>{formatDateTime(report.preferredPickupTime)}</p>

@@ -2,8 +2,8 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
-// const BASE_URL = 'http://localhost:3400/api/v1'; // Replace with your actual backend URL
-const BASE_URL = 'https://waste-management-backend-fwir.onrender.com/api/v1'
+const BASE_URL = 'http://localhost:3400/api/v1'; // Replace with your actual backend URL
+// const BASE_URL = 'https://waste-management-backend-fwir.onrender.com/api/v1'
 
 export const api = axios.create({
   baseURL: BASE_URL,
@@ -17,6 +17,38 @@ api.interceptors.request.use((config) => {
   return config;
 });
 
+
+
+export const getReportsByStatus = async (status) => {
+  return api.get(`/reports/status?status=${status}`);
+};
+
+export const getReportsHistory = async (params = {}) => {
+  const response = await api.get("/reports/history", {
+    params: {
+      page: params.page || 1,
+      limit: params.limit || 10,
+      ...params,
+    },
+  });
+  return response.data;
+};
+
+export const getTodayReports = async () => {
+  return api.get("/reports/today");
+};
+
+export const getWeeklyPickups = async () => {
+  return api.get("/reports/weekly-pickups");
+};
+
+export const getCompanyStats = async (params = { page: 1, limit: 10 }) => {
+  return api.get("/reports/stats", { params });
+};
+
+export const getReportStats = async () => {
+  return api.get("/reports/report-stats");
+};
 
 // Users
 export const createUser = async (userData) => {
@@ -48,7 +80,7 @@ export const getReports = async (page = 1, limit = 10) => {
 };
 
 export const getNearbyReports = async (latitude, longitude, page = 1, limit = 10) => {
-  return api.get(`/reports/nearby?latitude=${latitude}&longitude=${longitude}&page=${page}&limit=${limit}`);
+  return api.get(`/reports/nearby?latitude=${4.891979}&longitude=${6.927389}&page=${page}&limit=${limit}`);
 };
 
 export const getReportById = async (id) => {
@@ -56,11 +88,16 @@ export const getReportById = async (id) => {
 };
 
 export const approveReport = async (id, scheduledPickupTime) => {
-  return api.put(`/reports/approve/${id}`, { scheduledPickupTime });
+  return api.put(`/reports/approve/${id}`, {date: scheduledPickupTime});
 };
 
 export const updateReport = async (id, status) => {
   return api.put(`/reports/${id}`, { status });
+};
+
+export const ReportPickedUp = async (id, date) => {
+  console.log(date)
+  return api.put(`/reports/pickedup/${id}`, {date});
 };
 
 export const deleteReport = async (id) => {

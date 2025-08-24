@@ -8,14 +8,15 @@ const ReportWasteModal = ({ onClose }) => {
   const modalRef = useRef();
   const [formData, setFormData] = useState({
     location: "",
-    latitude: "",
-    longitude: "",
+    latitude: null,
+    longitude: null,
     type: "",
     description: "",
     quantity: "",
     preferredPickupTime: "",
     images: [],
   });
+  const [location, setLocation] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [formErrors, setFormErrors] = useState({});
   const [isGeoLoading, setIsGeoLoading] = useState(false);
@@ -27,6 +28,13 @@ const ReportWasteModal = ({ onClose }) => {
     setFormErrors((prev) => ({ ...prev, [name]: "" }));
   };
 
+
+  useEffect(() => {
+    if (!localStorage.getItem("token")) {
+      toast.error("You must be logged in to report waste");
+      onClose();
+    }
+  }, [])
   // Handle file input
   const handleFileChange = (e) => {
     const files = Array.from(e.target.files);
@@ -38,6 +46,12 @@ const ReportWasteModal = ({ onClose }) => {
     setFormData((prev) => ({ ...prev, images: files }));
     setFormErrors((prev) => ({ ...prev, images: "" }));
   };
+
+  const handleLocationChange = (e) => {
+    const value = e.target.value;
+    setLocation(value);
+    setFormData((prev) => ({ ...prev, location: value }));
+  }
 
   // Handle geolocation
   const handleGeolocationClick = async () => {
@@ -93,13 +107,14 @@ const ReportWasteModal = ({ onClose }) => {
       const data = await response.json();
       if (data.display_name) {
         setFormData((prev) => ({ ...prev, location: data.display_name }));
+        setLocation(data.display_name);
       } else {
-        setFormData((prev) => ({ ...prev, location: `${lat}, ${lng}` }));
+        setLocation(`${lat}, ${lng}`);
         toast.warn("Unable to fetch address, using coordinates");
       }
     } catch (err) {
       console.error("Geocoding error:", err);
-      setFormData((prev) => ({ ...prev, location: `${lat}, ${lng}` }));
+      setLocation(`${lat}, ${lng}`);
       toast.error("Failed to fetch address, using coordinates");
     }
   };
@@ -108,8 +123,7 @@ const ReportWasteModal = ({ onClose }) => {
   const validateForm = () => {
     const errors = {};
     if (!formData.type) errors.type = "Type of waste is required";
-    if (!formData.location) errors.location = "Pickup address is required";
-    if (!formData.latitude || !formData.longitude) errors.location = "Geolocation coordinates are required";
+    if (!location) errors.location = "Pickup address is required";
     if (!formData.description) errors.description = "Description is required";
     if (!formData.quantity) errors.quantity = "Quantity or approximate weight is required";
     if (!formData.preferredPickupTime) errors.preferredPickupTime = "Preferred time slot is required";
@@ -126,6 +140,7 @@ const ReportWasteModal = ({ onClose }) => {
     }
 
     setIsLoading(true);
+    console.log(formData)
 
     const formDataToSend = new FormData();
     formDataToSend.append("location", formData.location);
@@ -239,8 +254,8 @@ const ReportWasteModal = ({ onClose }) => {
               className={`py-2.5 px-3 border rounded-md text-[13px] ${
                 formErrors.location ? "border-red-500" : "border-gray-300"
               } focus:outline-none focus:ring-2 focus:ring-[#79DA11]`}
-              value={formData.location}
-              onChange={handleInputChange}
+              value={location}
+              onChange={handleLocationChange}
               placeholder="Enter address or use geolocation"
             />
             {formErrors.location && (

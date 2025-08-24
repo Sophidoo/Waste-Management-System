@@ -27,6 +27,8 @@ const Navbar = () => {
           localStorage.removeItem("tokenExpiresAt");
           setTimeout(() => navigate("/login"), 3000);
         }
+      } else{
+        navigate("/login")
       }
     };
     fetchUserDetails();
